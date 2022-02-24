@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2022_02_23_084643) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "content"
-    t.boolean "is_answer"
+    t.boolean "is_answer", default: false
     t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_02_23_084643) do
   end
 
   create_table "exam_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "answer_choice"
+    t.text "answer_choice"
     t.bigint "question_id", null: false
     t.bigint "exam_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2022_02_23_084643) do
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "conent"
-    t.integer "question_type"
+    t.string "content"
+    t.integer "question_type", default: 0
     t.bigint "subject_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
