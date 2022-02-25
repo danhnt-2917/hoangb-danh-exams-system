@@ -1,0 +1,20 @@
+vi:
+  base_title: "Hệ thống làm bài kiểm tra"
+  static_pages:
+    index:
+      welcome: "Chào mừng bạn đến với Hệ thống làm bài kiểm tra"
+      content: "Tại đây bạn có thể làm bài kiểm tra để nâng cao khả năng của mình "
+      login_button: "Đăng nhập"
+      title: "Trang chủ"
+  layouts:
+    header:
+      home: "Trang chủ"
+      help: "Trợ giúp"
+      login: "Đăng nhập"
+      logo: "Hệ thống làm bài kiểm tra"
+    footer:
+      contact: "Liên hệ với chúng tôi tại"
+      address: "80 Võ Nguyên Giáp, Phường Khuê My, Quận Ngũ Hành Sơn,Thành Phố Đà Nẵng, Việt Nam"
+      phone: "0935-769-410"
+      eng: "Tiếng Anh"
+      vie: "Tiếng Việt"
