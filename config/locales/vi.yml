@@ -1,5 +1,8 @@
 vi:
   base_title: "Hệ thống làm bài kiểm tra"
+  empty_subject: "Không có subject nào"
+  single_choice: "Một đáp án"
+  multi_choice: "Nhiều đáp án"
   static_pages:
     index:
       welcome: "Chào mừng bạn đến với Hệ thống làm bài kiểm tra"
@@ -18,3 +21,26 @@ vi:
       phone: "0935-769-410"
       eng: "Tiếng Anh"
       vie: "Tiếng Việt"
+  questions:
+    create:
+      create_success: "Tạo mới thành công!"
+      create_error: "Tạo mới thất bại!"
+    new:
+      button_create: "Tạo mới"
+      answer_title: "Câu trả lời"
+      title: "Tạo mới câu hỏi"
+      button_add: "Thêm câu hỏi"
+  activerecord:
+    models:
+      question: "Câu hỏi"
+      answer: "Câu trả lời"
+      subject: "Khóa học"
+    attributes:
+      question:
+        content: "Nội dung"
+        question_type: "Loại câu hỏi"
+      answer:
+        content: "Nội dung"
+        is_answer: "Có phải câu trả lời"
+      subject:
+        name: "Tên khóa học"
