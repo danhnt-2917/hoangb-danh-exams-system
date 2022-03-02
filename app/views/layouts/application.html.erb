@@ -7,11 +7,16 @@
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "custom" %>
+
   </head>
 
   <body>
     <%= render "layouts/header" %>
     <div class="mh-100">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>
