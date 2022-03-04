@@ -1,6 +1,7 @@
 vi:
   base_title: "Hệ thống làm bài kiểm tra"
   empty_subject: "Không có subject nào"
+  empty_exam: "Không có bài kiểm tra nào"
   single_choice: "Một đáp án"
   multi_choice: "Nhiều đáp án"
   static_pages:

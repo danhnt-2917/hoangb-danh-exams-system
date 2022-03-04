@@ -1,6 +1,7 @@
 en:
   base_title: "Exams System"
   empty_subject: "No Subject"
+  empty_exam: "No Exam"
   single_choice: "Single Choice"
   multi_choice: "Multiple Choice"
   static_pages:
@@ -30,6 +31,10 @@ en:
       answer_title: "Answer"
       title: "Create Question"
       button_add: "Add question"
+  exams:
+    update:
+      mark_exam_success: "Chấm điểm thành công"
+      mark_exam_error: "Chấm điểm thất bại"
   activerecord:
     models:
       question: "Question"
