@@ -7,11 +7,11 @@ class Question < ApplicationRecord
   accepts_nested_attributes_for :answers, allow_destroy: true,
     reject_if: proc{|attributes| attributes["content"].blank?}
 
-  validates_presence_of :answers
+  validates :answers, presence: true
 
   validates :content, presence: true,
     length: {maximum: Settings.validates.max_length},
     uniqueness: {case_sensitive: false}
 
-  enum question_type: {multi_choice: 1, single_choice: 2}
+  enum question_type: {multi_choice: 0, single_choice: 1}
 end
