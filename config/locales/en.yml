@@ -33,8 +33,21 @@ en:
       button_add: "Add question"
   exams:
     update:
-      mark_exam_success: "Chấm điểm thành công"
-      mark_exam_error: "Chấm điểm thất bại"
+      mark_exam_success: "Mark exam success!"
+      mark_exam_error: "Mark exam failed!"
+    index:
+      title: "Exam List"
+      start_time: "Start Time"
+      end_time: "End Time"
+      do_time: "Doing Time"
+      total_score: "Total Score"
+      quiz_id: "Quiz ID"
+      user_id: "User ID"
+      subject: "Subject"
+      action: "Action"
+      zero_exam: "No Exam"
+    exam:
+      button_mark_exam: "Mark exam"
   activerecord:
     models:
       question: "Question"

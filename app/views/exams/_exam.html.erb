@@ -1,0 +1,13 @@
+<tr>
+  <td><%= exam.quiz_subject_name %></td>
+  <td><%= exam.total_score %></td>
+  <td><%= convert_time(exam.start_time) %></td>
+  <td><%= convert_time(exam.end_time) %></td>
+  <td>
+    <%= convert_minutes(exam.end_time, exam.start_time).strftime("%M:%S") %>
+  </td>
+  <td>
+    <%= link_to t(".button_mark_exam"), exam_path(exam),
+      class: "btn btn-info", method: :patch %>
+  </td>
+</tr>

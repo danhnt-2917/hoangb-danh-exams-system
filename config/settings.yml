@@ -1,2 +1,4 @@
 validates:
   max_length: 255
+page:
+  items_10: 10
