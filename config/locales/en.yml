@@ -46,6 +46,8 @@ en:
       subject: "Subject"
       action: "Action"
       zero_exam: "No Exam"
+      button_search: "Search"
+      exam_not_found: "This subject hasn't had any exams!"
     exam:
       button_mark_exam: "Mark exam"
   activerecord:

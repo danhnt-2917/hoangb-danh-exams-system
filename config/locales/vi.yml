@@ -46,6 +46,8 @@ vi:
       user_id: "User ID"
       action: "Hành động"
       zero_exam: "Không có bài kiểm tra nào"
+      button_search: "Tìm kiếm"
+      exam_not_found: "Không có bài kiểm tra của khóa học này!"
     exam:
       button_mark_exam: "Chấm điểm"
   activerecord:
