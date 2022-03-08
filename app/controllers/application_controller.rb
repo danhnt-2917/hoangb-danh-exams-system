@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
+  include Pagy::Backend
   before_action :set_locale
 
   private

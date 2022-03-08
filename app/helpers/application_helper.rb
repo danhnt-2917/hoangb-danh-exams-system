@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def full_title page_title = ""
     base_title = t("base_title")
     page_title.blank? ? base_title : "#{page_title} | #{base_title}"
@@ -12,5 +14,9 @@ module ApplicationHelper
     end
     link_to name, "#", class: "add_fields " + args[:class],
       data: {id: id, fields: fields.gsub("\n", "")}
+  end
+
+  def seeding_current_user
+    @current_user = User.find_by id: 6
   end
 end
