@@ -3,8 +3,8 @@ class ExamsController < ApplicationController
   before_action :load_exam, :mark_exam, only: :update
 
   def index
-    @pagy, @exams = pagy(@current_user.exams.sort_by_created_date,
-      items: Settings.page.items_10)
+    @pagy,@exams = pagy @current_user.exams.find_by_subject(params[:subject]).sort_by_created_date,
+     items: Settings.page.items_10
   end
 
   def update

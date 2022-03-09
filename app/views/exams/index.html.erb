@@ -1,5 +1,13 @@
 <% provide :title, t(".title") %>
 <h1><%= t(".title") %></h1>
+<div class="text-right form-inline">
+  <%= form_tag exams_path, method: :get do %>
+    <%= select_tag :subject,
+      options_from_collection_for_select(subject_collection, :id, :name),
+      class: "form-control" %>
+    <%= submit_tag t(".button_search"), class: "btn btn-primary" %>
+  <% end %>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -12,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= render @exams || t(".zero_exam") %>
+    <%= render(@exams) || t(".zero_exam") %>
   </tbody>
 </table>
 <%== pagy_bootstrap_nav(@pagy) %>
