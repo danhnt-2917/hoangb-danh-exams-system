@@ -1,0 +1,43 @@
+<%= form_for @exam do |f| %>
+  <div class="container-fluid">
+    <h2>Người làm: <%= @exam.user.name %></h2>
+    <%= f.hidden_field :start_time , value: "#{DateTime.now.strftime("%F")}" %>
+  </div>
+  <div class="container-fluid">
+    <%= f.fields_for :exam_details do |detail| %>
+      <%= detail.hidden_field :question_id, value: detail.object.question.id %>
+      <hr>
+      <div class="container-fluid">
+        <%= detail.index + 1 %>.
+        <%= detail.object.question.content %>
+        <br>
+        <% if detail.object.question.single_choice? %>
+          <%= detail.fields_for :exam_detail_answers do |dea| %>
+            <label class="radiocontainer answer-content">
+              <%= dea.hidden_field :answer_id, value: dea.object.answer.id %>
+              <%= dea.hidden_field :checked, value: "0" %>
+              <%= dea.radio_button :checked, dea.object.answer.content,
+                disabled: true, class: "answer-radiobutton"%>
+              <%= dea.object.answer.content %>
+            </label>
+            <br>
+          <% end %>
+        <% else %>
+          <%= detail.fields_for :exam_detail_answers do |dea| %>
+            <label class="radiocontainer answer-content">
+              <%= dea.hidden_field :answer_id, value: dea.object.answer.id %>
+              <%= dea.check_box :checked , disabled: true %>
+              <%= dea.object.answer.content %>
+            </label>
+            <br>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="container-fluid">
+    <div class="text-right">
+      <%= link_to t(".button_back") , admin_exams_path , class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

@@ -19,4 +19,8 @@ module ApplicationHelper
   def seeding_current_user
     @current_user = User.find_by id: 6
   end
+
+  def subject_collection
+    Subject.select :name, :id
+  end
 end

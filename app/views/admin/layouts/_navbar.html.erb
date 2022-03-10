@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="header_left">
+    <input type="text" class="form-control" placeholder="Search..." />
+    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+  </div>
+  <div class="header_right">
+    <div class="dropdown">
+      <%= link_to "#", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
+        <%= t(".account") %>
+        <span class="caret"></span>
+      <% end %>
+      <ul class="dropdown-menu">
+        <li><%= link_to t(".profile_menu"), "#" %></li>
+        <li><%= link_to t(".setting_menu"), "#" %></li>
+        <li><%= link_to t(".logout_menu"), "#" %></li>
+      </ul>
+    </div>
+  </div>
+</div>
