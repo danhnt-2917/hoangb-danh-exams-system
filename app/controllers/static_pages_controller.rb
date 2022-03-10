@@ -1,3 +1,5 @@
 class StaticPagesController < ApplicationController
-  def index; end
+  def index
+    @exam = Exam.new
+  end
 end

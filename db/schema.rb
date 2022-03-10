@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_23_084643) do
+ActiveRecord::Schema.define(version: 2022_03_11_094654) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "content"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2022_02_23_084643) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "exam_detail_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "exam_detail_id"
+    t.bigint "answer_id"
+    t.boolean "checked"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_id"], name: "index_exam_detail_answers_on_answer_id"
+    t.index ["exam_detail_id"], name: "index_exam_detail_answers_on_exam_detail_id"
   end
 
   create_table "exam_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -45,7 +55,7 @@ ActiveRecord::Schema.define(version: 2022_02_23_084643) do
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "content"
-    t.integer "question_type", default: 0
+    t.integer "question_type", default: 1
     t.bigint "subject_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -84,6 +94,8 @@ ActiveRecord::Schema.define(version: 2022_02_23_084643) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "exam_detail_answers", "answers"
+  add_foreign_key "exam_detail_answers", "exam_details"
   add_foreign_key "exam_details", "exams"
   add_foreign_key "exam_details", "questions"
   add_foreign_key "exams", "quizzes"

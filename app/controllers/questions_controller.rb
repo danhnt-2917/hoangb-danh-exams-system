@@ -1,8 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :load_subject, only: :create
 
-  def index; end
-
   def new
     @question = Question.new
   end
@@ -12,7 +10,7 @@ class QuestionsController < ApplicationController
     @question = current_user.questions.build question_params
     if @question.save
       flash[:success] = t(".create_success")
-      redirect_to root_path
+      redirect_to questions_path
     else
       flash.now[:error] = t(".create_error")
       render :new
