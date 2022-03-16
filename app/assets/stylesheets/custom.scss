@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "color";
 
 section {
   overflow: auto;
@@ -13,12 +14,12 @@ textarea {
 .center h1 {
   margin-bottom: 10px;
 }
-
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
+  color: $white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -27,6 +28,7 @@ textarea {
 
 #logo:hover {
   color: #fff;
+  color: $white;
   text-decoration: none;
 }
 
@@ -35,26 +37,35 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  border-top: 1px solid $blur-gray;
+  color: $light-gray;
 }
+
 footer a {
   color: #555;
+  color: $davy-gray;
 }
+
 footer a:hover {
   color: #222;
+  color: $very-dark-gray;
 }
+
 footer small {
   float: left;
 }
+
 footer ul {
   float: right;
   list-style: none;
 }
+
 footer ul li {
   float: left;
   margin-left: 15px;
 }
 
-.p-style-1{
+.p-style-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,7 +76,7 @@ footer ul li {
   margin-top: 15px
 }
 
-.p-style-2{
+.p-style-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,10 +84,10 @@ footer ul li {
   width: 100%
 }
 
-.bg-dark{
+.bg-dark {
   background-color: black;
 }
 
-.mh-100{
+.mh-100 {
   min-height: 100vh;
 }

@@ -1,5 +1,6 @@
 class Exam < ApplicationRecord
-  EXAM_PARAMS = [:id, :start_time, :quiz_id, exam_details_attributes: [:question_id, :answer_choice,
+  EXAM_PARAMS = [:id, :start_time, :quiz_id,
+    exam_details_attributes: [:question_id, :answer_choice,
     exam_detail_answers_attributes: [:checked, :answer_id, :id]]].freeze
 
   belongs_to :quiz

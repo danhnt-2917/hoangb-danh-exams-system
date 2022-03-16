@@ -84,3 +84,21 @@ vi:
         button_detail: "Xem chi tiết"
       show:
         button_back: "Quay lại"
+    home:
+      index:
+        supervisor_page: "Trang quản trị"
+    layouts:
+      navbar:
+        profile_menu: "Thông tin cá nhân"
+        setting_menu: "Thiết lập"
+        logout_menu: "Đăng xuất"
+        account: "Tài khoản quản trị"
+      sidebar:
+        header: "Quản trị hệ thống kiểm tra"
+        logged_in_as: "Đăng nhập dưới tên:"
+        dashboard_menu: "Trang chủ"
+        subject_menu: "Môn học/chủ đề"
+        question_menu: "Câu hỏi"
+        quiz_menu: "Bộ câu hỏi"
+        exam_menu: "Đề kiểm tra"
+        user_supervisor: "Người dùng/người giám sát"

@@ -4,8 +4,8 @@ class ExamsController < ApplicationController
   before_action :load_exam, only: :show
 
   def index
-    @pagy,@exams = pagy @current_user.exams.find_by_subject(params[:subject]).sort_by_created_date,
-     items: Settings.page.items_10
+    @pagy, @exams = pagy @current_user.exams.find_by_subject(params[:subject]).sort_by_created_date,
+                         items: Settings.page.items_10
   end
 
   def new
@@ -50,7 +50,7 @@ class ExamsController < ApplicationController
   end
 
   def find_quiz
-    @quiz = Quiz.find_by_subject params[:subject]
+    @quiz = Quiz.find_by subject: params[:subject]
     return if @quiz
 
     flash.now[:danger] = "No quiz found"

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "custom" %>
+
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <%= render "admin/layouts/sidebar" %>
+      <div class="main_content">
+        <%= render "admin/layouts/navbar" %>
+        <div class="info">
+          <div class="container">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

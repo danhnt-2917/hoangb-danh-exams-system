@@ -5,5 +5,5 @@ class ExamDetail < ApplicationRecord
   has_many :exam_detail_answers, dependent: :destroy
 
   accepts_nested_attributes_for :exam_detail_answers,
-    allow_destroy: true
+                                allow_destroy: true
 end

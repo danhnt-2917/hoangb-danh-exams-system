@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <h2><%= t(".header") %></h2>
+  <ul>
+    <li><%= link_to admin_root_url do %>
+      <i class="fas fa-home"></i>
+      <%= t(".dashboard_menu") %><% end %>
+    </li>
+    <li><%= link_to "#" do %>
+      <i class="fab fa-accusoft"></i>
+      <%= t(".subject_menu") %><% end %>
+    </li>
+    <li><%= link_to "#" do %>
+      <i class="fas fa-question-circle"></i>
+      <%= t(".question_menu") %><% end %>
+    </li>
+    <li><%= link_to admin_exams_path do %>
+      <i class="fas fa-diagnoses"></i>
+      <%= t(".exam_menu") %><% end %>
+    </li>
+    <li><%= link_to "#" do %>
+      <i class="fas fa-users"></i>
+      <%= t(".user_supervisor") %><% end %>
+    </li>
+  </ul>
+  <div class="logged_in_as">
+    <%= t(".logged_in_as") %>
+  </div>
+</div>

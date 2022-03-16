@@ -5,7 +5,7 @@ class Admin::ExamsController < Admin::AdminController
   def index
     @pagy, @exams =
       pagy Exam.find_by_subject(params[:subject]).find_by_date(params[:start_time]).find_by_user(params[:user]).sort_by_created_date,
-      items: Settings.page.items_10
+           items: Settings.page.items_10
   end
 
   def update
@@ -28,7 +28,6 @@ class Admin::ExamsController < Admin::AdminController
     flash[:danger] = t("empty_exam")
     redirect_to root_path
   end
-
 
   def load_exam
     @exam = Exam.find_by id: params[:id]
@@ -53,9 +52,7 @@ class Admin::ExamsController < Admin::AdminController
           break
         end
       end
-      if is_true == true
-        @exam.total_score += 1.0 / answer_array
-      end
+      @exam.total_score += 1.0 / answer_array if is_true == true
     end
   end
 end

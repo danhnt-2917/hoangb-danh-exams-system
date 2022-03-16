@@ -84,3 +84,21 @@ en:
         button_detail: "View"
       show:
         button_back: "Back"
+    home:
+      index:
+        supervisor_page: "Supervisor Page"
+      layouts:
+        navbar:
+          profile_menu: "Profile"
+          setting_menu: "Settings"
+          logout_menu: "Logout"
+          account: "Admin account"
+        sidebar:
+          header: "Exam System Administrator"
+          logged_in_as: "Logged in as:"
+          dashboard_menu: "Dashboard"
+          subject_menu: "Subjects"
+          question_menu: "Questions"
+          quiz_menu: "Quizzes"
+          exam_menu: "Exams"
+          user_supervisor: "Users/Supervisors"
