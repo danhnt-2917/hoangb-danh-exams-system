@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2022_03_11_094654) do
   end
 
   create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "start_time"
-    t.integer "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.integer "total_score"
     t.bigint "quiz_id", null: false
     t.bigint "user_id", null: false

@@ -10,4 +10,8 @@ module ExamsHelper
   def subject_collection
     Subject.pluck(:id, :name)
   end
+
+  def user_collection
+    User.where(role: 0).select :id, :name
+  end
 end

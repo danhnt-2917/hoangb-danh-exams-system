@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
     resources :questions, only: %i(new create)
     resources :exams
+
+    namespace :admin do
+      resources :exams
+    end
   end
 end

@@ -14,4 +14,7 @@ class Exam < ApplicationRecord
 
   scope :find_by_subject,
         ->(id){joins({quiz: :subject}, :user).where(subjects: {id: id}) if id.present?}
+  scope :find_by_date, ->(date){where "start_time = ?", date if date.present?}
+
+  scope :find_by_user, ->(id){where "user_id = ?", id if id.present?}
 end

@@ -32,9 +32,6 @@ en:
       title: "Create Question"
       button_add: "Add question"
   exams:
-    update:
-      mark_exam_success: "Mark exam success!"
-      mark_exam_error: "Mark exam failed!"
     index:
       title: "Exam List"
       start_time: "Start Time"
@@ -49,7 +46,11 @@ en:
       button_search: "Search"
       exam_not_found: "This subject hasn't had any exams!"
     exam:
-      button_mark_exam: "Mark exam"
+      button_detail: "View"
+    show:
+      button_back: "Back"
+    new:
+      button_submit: "Submit"
   activerecord:
     models:
       question: "Question"
@@ -64,3 +65,22 @@ en:
         is_answer: "Is answer"
       subject:
         name: "Subject"
+  admin:
+    exams:
+      index:
+        title: "Exam List"
+        button_search: "Search"
+        subject: "Subject:"
+        user: "Trainee:"
+        start_time: "Start Time:"
+        end_time: "End Time"
+        do_time: "Do time"
+        action: "Action"
+      update:
+        mark_exam_success: "Mark exam success"
+        mark_exam_error: "Mark exam error"
+      exam:
+        button_mark_exam: "Mark exam"
+        button_detail: "View"
+      show:
+        button_back: "Back"

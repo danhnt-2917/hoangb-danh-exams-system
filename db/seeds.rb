@@ -616,8 +616,8 @@ quizzes = Quiz.pluck(:id).shuffle
 20.times do
   trainees.each do |trainee|
     score_random = Random.new.rand(15..30)
-    trainee.exams.build start_time: (Time.now.to_i-1200),
-      end_time: Time.now.to_i,
+    trainee.exams.build start_time: (DateTime.now-0.1).strftime("%F"),
+      end_time: DateTime.now.strftime("%F"),
       total_score: score_random, quiz_id: quizzes.shuffle.first
     trainee.save
   end

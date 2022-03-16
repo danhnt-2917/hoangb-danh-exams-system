@@ -6,7 +6,11 @@
   <td>
     <%= convert_minutes(exam.created_at, exam.start_time).strftime("%M:%S") %>
   </td>
+  <td><%= exam.user.name %></td>
   <td>
-    <%= link_to t(".button_detail"), exam_path(exam), class: "btn btn-info" %>
+    <%= link_to t(".button_mark_exam"), admin_exam_path(exam),
+      class: "btn btn-warning", method: :patch %>
+    <%= link_to t(".button_detail"), admin_exam_path(exam),
+      class: "btn btn-primary" %>
   </td>
 </tr>

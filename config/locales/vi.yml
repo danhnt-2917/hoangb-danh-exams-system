@@ -32,9 +32,6 @@ vi:
       title: "Tạo mới câu hỏi"
       button_add: "Thêm câu hỏi"
   exams:
-    update:
-      mark_exam_success: "Chấm điểm thành công"
-      mark_exam_error: "Chấm điểm thất bại"
     index:
       title: "Danh sách bài kiểm tra"
       start_time: "Thời gian bắt đầu"
@@ -49,7 +46,11 @@ vi:
       button_search: "Tìm kiếm"
       exam_not_found: "Không có bài kiểm tra của khóa học này!"
     exam:
-      button_mark_exam: "Chấm điểm"
+      button_detail: "Xem chi tiết"
+    show:
+      button_back: "Quay lại"
+    new:
+      button_submit: "Nộp bài"
   activerecord:
     models:
       question: "Câu hỏi"
@@ -64,3 +65,22 @@ vi:
         is_answer: "Có phải câu trả lời"
       subject:
         name: "Tên khóa học"
+  admin:
+    exams:
+      index:
+        title: "Danh sách bài kiểm tra"
+        button_search: "Tìm kiếm"
+        subject: "Khóa học:"
+        user: "Học viên:"
+        start_time: "Ngày làm:"
+        end_time: "Thời gian kết thúc"
+        do_time: "Thời gian làm bài"
+        total_score: "Tổng điểm"
+      update:
+        mark_exam_success: "Chấm điểm thành công"
+        mark_exam_error: "Chấm điểm thất bại"
+      exam:
+        button_mark_exam: "Chấm điểm"
+        button_detail: "Xem chi tiết"
+      show:
+        button_back: "Quay lại"
