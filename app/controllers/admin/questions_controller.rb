@@ -1,5 +1,10 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::AdminController
   before_action :load_subject, only: :create
+
+  def index
+    qlist = Question.find_content(params[:content]).find_user(params[:user]).find_subject(params[:subject]).find_type(params[:type])
+    @pagy, @questions = pagy qlist, items: Settings.page.items_10
+  end
 
   def new
     @question = Question.new

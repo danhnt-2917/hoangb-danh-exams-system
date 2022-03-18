@@ -1,0 +1,68 @@
+<% provide :title, t(".title") %>
+<h1><%= t(".title") %></h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= link_to "Create question",
+        new_admin_question_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+    <div class="col-md-8 form-inline">
+      <%= form_tag admin_questions_path, method: :get do %>
+        <div class="form-group">
+          <label>
+            Subject:
+            <%= select_tag :subject,
+              options_from_collection_for_select(subject_collection, :id, :name,
+              params[:subject]), class: "form-control" %>
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            Creator:
+            <%= select_tag :user,
+              options_from_collection_for_select(creator_collection, :id, :name,
+              params[:user]), class: "form-control" %>
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            Content:
+            <%= text_field_tag :content, params[:content], class: "form-control" %>
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            Question type:
+            <%= select_tag :type,
+              options_for_select(question_type_collection), class: "form-control"
+              %>
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <%= submit_tag "search", class: "btn btn-primary" %>
+          </label>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= t(".subject") %></th>
+        <th><%= t(".content") %></th>
+        <th><%= t(".question_type") %></th>
+        <th><%= t(".creator") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render(@questions) || t(".zero_question") %>
+    </tbody>
+  </table>
+  <%== pagy_bootstrap_nav(@pagy) %>
+
+</div>

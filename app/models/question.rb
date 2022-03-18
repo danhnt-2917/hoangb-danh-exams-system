@@ -14,4 +14,9 @@ class Question < ApplicationRecord
     uniqueness: {case_sensitive: false}
 
   enum question_type: {multi_choice: 0, single_choice: 1}
+
+  scope :find_content, ->(content){where "content like ?", content if content.present?}
+  scope :find_user, ->(id){where "user_id = ?", id if id.present?}
+  scope :find_subject, ->(id){where "subject_id = ?", id if id.present?}
+  scope :find_type, ->(type){where "question_type = ?", type if type.present?}
 end

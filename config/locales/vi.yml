@@ -22,15 +22,6 @@ vi:
       phone: "0935-769-410"
       eng: "Tiếng Anh"
       vie: "Tiếng Việt"
-  questions:
-    create:
-      create_success: "Tạo mới thành công!"
-      create_error: "Tạo mới thất bại!"
-    new:
-      button_create: "Tạo mới"
-      answer_title: "Câu trả lời"
-      title: "Tạo mới câu hỏi"
-      button_add: "Thêm câu hỏi"
   exams:
     index:
       title: "Danh sách bài kiểm tra"
@@ -102,3 +93,12 @@ vi:
         quiz_menu: "Bộ câu hỏi"
         exam_menu: "Đề kiểm tra"
         user_supervisor: "Người dùng/người giám sát"
+    questions:
+      create:
+        create_success: "Tạo mới thành công!"
+        create_error: "Tạo mới thất bại!"
+      new:
+        button_create: "Tạo mới"
+        answer_title: "Câu trả lời"
+        title: "Tạo mới câu hỏi"
+        button_add: "Thêm câu hỏi"
