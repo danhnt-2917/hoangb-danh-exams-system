@@ -1,7 +1,10 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::AdminController
   before_action :load_subject, only: :create
 
-  def index; end
+  def index
+    qlist = Question.find_content(params[:content]).find_user(params[:user]).find_subject(params[:subject]).find_type(params[:type])
+    @pagy, @questions = pagy qlist, items: Settings.page.items_10
+  end
 
   def new
     @question = Question.new
@@ -12,7 +15,7 @@ class QuestionsController < ApplicationController
     @question = current_user.questions.build question_params
     if @question.save
       flash[:success] = t(".create_success")
-      redirect_to root_path
+      redirect_to questions_path
     else
       flash.now[:error] = t(".create_error")
       render :new

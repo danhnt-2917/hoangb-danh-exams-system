@@ -12,10 +12,17 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
-    <div class="mh-100">
-      <%= yield %>
+    <div class="wrapper">
+      <%= render "admin/layouts/sidebar" %>
+      <div class="main_content">
+        <%= render "admin/layouts/navbar" %>
+        <div class="info">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
-    <%= render "layouts/footer" %>
   </body>
 </html>

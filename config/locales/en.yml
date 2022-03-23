@@ -4,6 +4,7 @@ en:
   empty_exam: "No Exam"
   single_choice: "Single Choice"
   multi_choice: "Multiple Choice"
+  empty_quiz: "No Quiz found"
   static_pages:
     index:
       welcome: "Welcome to Exams System"
@@ -22,19 +23,7 @@ en:
       phone: "0935-769-410"
       eng: "English"
       vie: "Vietnam"
-  questions:
-    create:
-      create_success: "Created success!"
-      create_error: "Created failed!"
-    new:
-      button_create: "Create"
-      answer_title: "Answer"
-      title: "Create Question"
-      button_add: "Add question"
   exams:
-    update:
-      mark_exam_success: "Mark exam success!"
-      mark_exam_error: "Mark exam failed!"
     index:
       title: "Exam List"
       start_time: "Start Time"
@@ -49,7 +38,11 @@ en:
       button_search: "Search"
       exam_not_found: "This subject hasn't had any exams!"
     exam:
-      button_mark_exam: "Mark exam"
+      button_detail: "View"
+    show:
+      button_back: "Back"
+    new:
+      button_submit: "Submit"
   activerecord:
     models:
       question: "Question"
@@ -58,9 +51,55 @@ en:
     attributes:
       question:
         content: "Content"
-        question_type: "Quesiton type"
+        question_types: "Question type"
       answer:
         content: "Content"
         is_answer: "Is answer"
       subject:
         name: "Subject"
+  admin:
+    exams:
+      index:
+        title: "Exam List"
+        button_search: "Search"
+        subject: "Subject:"
+        user: "Trainee:"
+        start_time: "Start Time:"
+        end_time: "End Time"
+        do_time: "Do time"
+        action: "Action"
+      update:
+        mark_exam_success: "Mark exam success"
+        mark_exam_error: "Mark exam error"
+      exam:
+        button_mark_exam: "Mark exam"
+        button_detail: "View"
+      show:
+        button_back: "Back"
+    home:
+      index:
+        supervisor_page: "Supervisor Page"
+      layouts:
+        navbar:
+          profile_menu: "Profile"
+          setting_menu: "Settings"
+          logout_menu: "Logout"
+          account: "Admin account"
+        sidebar:
+          header: "Exam System Administrator"
+          logged_in_as: "Logged in as:"
+          dashboard_menu: "Dashboard"
+          subject_menu: "Subjects"
+          question_menu: "Questions"
+          quiz_menu: "Quizzes"
+          exam_menu: "Exams"
+          user_supervisor: "Users/Supervisors"
+    questions:
+      create:
+        create_success: "Created success!"
+        create_error: "Created failed!"
+      new:
+        button_create: "Create"
+        answer_title: "Answer"
+        title: "Create Question"
+        button_add: "Add question"

@@ -610,26 +610,30 @@ subjects = Subject.all
   end
 end
 
-trainees = User.where(role: 0).take(5)
-quizzes = Quiz.pluck(:id).take(5)
+trainees = User.where(role: 0).shuffle
+quizzes = Quiz.pluck(:id).shuffle
 
-5.times do
+20.times do
   trainees.each do |trainee|
     score_random = Random.new.rand(15..30)
-    trainee.exams.build start_time: (Time.now.to_i-1200),
-      end_time: Time.now.to_i,
+    trainee.exams.build start_time: (DateTime.now-0.1),
+      end_time: DateTime.now,
       total_score: score_random, quiz_id: quizzes.shuffle.first
     trainee.save
   end
 end
 
-exams = Exam.all.shuffle.take 5
-5.times do
-  exams.each do |exam|
-    subject_id = exam.quiz.subject_id
-    question = Question.where(subject_id: subject_id).shuffle.first.id
+exams = Exam.all
+exams.each do |exam|
+  subject_id = exam.quiz.subject_id
+  quantity_question = exam.quiz.quantity_question
+  questions = Question.where(subject_id: subject_id).shuffle.take(quantity_question)
+
+  questions.each do |q|
     answer_choice = Random.new.rand(1..4)
-    exam.exam_details.build question_id: question, answer_choice: answer_choice
-    exam.save!
+    exam.exam_details.build question_id: q.id, answer_choice: answer_choice
   end
+
+  exam.save!
 end
+
