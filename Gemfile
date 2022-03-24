@@ -19,7 +19,8 @@ gem "figaro"
 gem "jquery-rails"
 gem "pagy"
 gem "rails-i18n"
-# Use Active Storage variant
+gem "simplecov"
+gem "simplecov-rcov"
 # gem "image_processing", "~> 1.2"
 
 gem "bootsnap", ">= 1.4.2", require: false
@@ -41,7 +42,10 @@ end
 
 group :test do
   gem "capybara", ">= 2.15"
+  gem "database_cleaner", "~> 1.5"
+  gem "factory_bot_rails"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "~> 5.0"
   gem "webdrivers"
 end
 

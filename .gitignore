@@ -1,6 +1,5 @@
 *.rbc
 capybara-*.html
-.rspec
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /db/*.sqlite3-[0-9]*
@@ -74,8 +73,6 @@ yarn-debug.log*
 .browserslistrc
 config/credentials.yml.enc
 config/database.yml
-
-/spec
 
 config/settings.local.yml
 config/settings/*.local.yml
