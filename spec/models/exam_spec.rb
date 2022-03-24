@@ -35,7 +35,7 @@ RSpec.describe Exam, type: :model do
 
     context "find exam by start date" do
       it "should be listed exam by start date" do
-        expect(Exam.find_by_date("2022-03-23")).to eq [exam_1, exam_2, exam_3]
+        expect(Exam.find_by_date("2022-03-24")).to eq [exam_1, exam_2, exam_3]
       end
     end
 
